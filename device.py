@@ -4,10 +4,10 @@ import os
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['POST'])
 def obtener_hostname():
-    # hostname = socket.gethostname()
-    return jsonify({'message': 'control'})
+    hostname = socket.gethostname()
+    return jsonify({'hostname': hostname})
 
 # @app.route('/hostname', methods=['POST'])
 # def cambiar_hostname():
